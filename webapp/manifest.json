@@ -14,6 +14,16 @@
             "id": "@sap/generator-fiori:basic",
             "version": "1.16.2",
             "toolsId": "d7511be4-4e14-4e7a-8e14-f36b3ff054fb"
+        },
+        "dataSources": {
+            "myNorthwind": {
+                "type": "OData",
+                "uri": "/v2/northwind/northwind.svc/",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        
         }
     },
     "sap.ui": {
@@ -55,6 +65,10 @@
             "invoices": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/Invoices.json"
+            },
+            "northwind": {
+                "dataSource": "myNorthwind",
+                "preload": true
             }
         },
         "resources": {
@@ -79,17 +93,35 @@
             "routes": [
                 {
                     "name": "RouteApp",
-                    "pattern": ":?query:",
+                    "pattern": "",
                     "target": [
-                        "TargetApp"
+                        "TargetOverview"
+                    ]
+                },
+                {
+                    "name": "Details",
+                    "pattern": "details/{invoicePath}",
+                    "target": [
+                        "TargetDetails"
                     ]
                 }
             ],
             "targets": {
-                "TargetApp": {
-                    "id": "App",
-                    "name": "App"
-                }
+                "TargetOverview": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Overview",
+                    "viewName": "Overview"
+                },
+                "TargetDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Details",
+                    "viewName": "Details"
+                    }
+                
             }
         },
         "rootView": {

@@ -28,10 +28,6 @@ sap.ui.define([
             // set data model on the view
             this.setModel(models.createRecipient());
 
-            //set i18n model on the view
-            var i18nModel = new ResourceModel({ bundleName: "com.logali.invoices.i18n.i18n" }); 
-            this.setModel(i18nModel, "i18n");
-
             this._helloDialog = new HelloDialog(this.getRootControl());
         },
 

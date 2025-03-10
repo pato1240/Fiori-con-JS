@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="com.logali.invoices.controller.Details"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:rating="com.logali.invoices.control"
+>
+    <Page
+        title="{i18n>detailsTitle}"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <ObjectHeader title="{northwind>ShipName}">
+            <attributes>
+                <ObjectAttribute text="{northwind>ShipAddress}" />
+                <ObjectAttribute text="{northwind>ShipCity}" />
+                <ObjectAttribute text="{northwind>ShipRegion}" />
+                <ObjectAttribute text="{northwind>ShipPostalCode}" />
+                <ObjectAttribute text="{northwind>ShipCountry}" />
+                <ObjectAttribute text="{northwind>CustomerID}" />
+                <ObjectAttribute text="{northwind>CustomerName}" />
+            </attributes>
+        </ObjectHeader>
+        <rating:ProductRating
+            id="rating"
+            class="sapUiSmallMarginBeginEnd"
+            change=".onRatingChange"
+        />
+    </Page>
+</mvc:View>
