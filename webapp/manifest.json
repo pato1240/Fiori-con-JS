@@ -59,7 +59,12 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.logali.invoices.i18n.i18n"
+                    "bundleName": "com.logali.invoices.i18n.i18n",
+                    "supportedLocales": [
+                        "",
+                        "es"
+                    ],
+                    "fallbackLocale": ""
                 }
             },
             "invoices": {

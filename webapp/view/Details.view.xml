@@ -9,7 +9,11 @@
         showNavButton="true"
         navButtonPress=".onNavBack"
     >
-        <ObjectHeader title="{northwind>ShipName}">
+        <ObjectHeader
+            title="{northwind>ShipName}"
+            responsive="true"
+            fullScreenOptimized="true"
+        >
             <attributes>
                 <ObjectAttribute text="{northwind>ShipAddress}" />
                 <ObjectAttribute text="{northwind>ShipCity}" />

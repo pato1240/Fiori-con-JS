@@ -1,10 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "com/logali/invoices/model/models",
-    "sap/m/Text",
-    "sap/ui/model/resource/ResourceModel",
     "./controller/HelloDialog",
-], (UIComponent, models, Text, ResourceModel, HelloDialog) => {
+], (UIComponent, models, HelloDialog) => {
     "use strict";
 
     return UIComponent.extend("com.logali.invoices.Component", {
